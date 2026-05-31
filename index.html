@@ -1,0 +1,2125 @@
+```html
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>壬沣（杭州）生态环保科技有限公司 | 科技守护绿水青山</title>
+    <style>
+        /* ==================== CSS Reset & Base ==================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a6b3c;
+            --primary-dark: #0f4d2a;
+            --primary-light: #2d9254;
+            --accent: #3ecf8e;
+            --accent-light: #a8f0d0;
+            --blue: #1a73e8;
+            --blue-light: #e8f0fe;
+            --dark: #1a1a2e;
+            --text: #333333;
+            --text-light: #666666;
+            --text-lighter: #999999;
+            --bg: #ffffff;
+            --bg-light: #f8faf9;
+            --bg-gray: #f0f4f2;
+            --border: #e0e8e4;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+            --radius: 12px;
+            --radius-sm: 8px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background: var(--bg);
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul { list-style: none; }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ==================== Section Common ==================== */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header .en-title {
+            font-size: 14px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            margin: 16px auto 0;
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            font-size: 16px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ==================== Buttons ==================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(26,107,60,0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(26,107,60,0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #fff;
+            border: 2px solid rgba(255,255,255,0.6);
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: var(--primary);
+            border-color: #fff;
+        }
+
+        .btn-outline-green {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline-green:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* ==================== Header / Navigation ==================== */
+        .top-bar {
+            background: var(--primary-dark);
+            color: rgba(255,255,255,0.8);
+            font-size: 13px;
+            padding: 8px 0;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar a {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .top-bar a:hover {
+            color: #fff;
+        }
+
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        header.scrolled .top-bar {
+            display: none;
+        }
+
+        .nav-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: #fff;
+            font-weight: 700;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 50%;
+            top: -5px;
+            right: -5px;
+        }
+
+        .logo-text h1 {
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 1.3;
+            transition: var(--transition);
+        }
+
+        .logo-text span {
+            font-size: 11px;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        header:not(.scrolled) .logo-text h1 {
+            color: #fff;
+        }
+
+        header:not(.scrolled) .logo-text span {
+            color: rgba(255,255,255,0.7);
+        }
+
+        header.scrolled .logo-text h1 {
+            color: var(--primary-dark);
+        }
+
+        header.scrolled .logo-text span {
+            color: var(--text-light);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .nav-links a {
+            padding: 10px 18px;
+            font-size: 15px;
+            font-weight: 500;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        header:not(.scrolled) .nav-links a {
+            color: rgba(255,255,255,0.9);
+        }
+
+        header:not(.scrolled) .nav-links a:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.1);
+        }
+
+        header.scrolled .nav-links a {
+            color: var(--text);
+        }
+
+        header.scrolled .nav-links a:hover {
+            color: var(--primary);
+            background: var(--bg-light);
+        }
+
+        .nav-links a.active {
+            color: var(--accent) !important;
+        }
+
+        .nav-contact-btn {
+            margin-left: 15px;
+            padding: 10px 24px !important;
+            background: linear-gradient(135deg, var(--primary), var(--accent)) !important;
+            color: #fff !important;
+            border-radius: 50px !important;
+            font-weight: 600 !important;
+        }
+
+        .nav-contact-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(26,107,60,0.3);
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 2px;
+            background: #fff;
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        header.scrolled .menu-toggle span {
+            background: var(--text);
+        }
+
+        /* ==================== Hero Section ==================== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #0a2e1a 0%, #1a4a30 30%, #0d3d22 60%, #0a2e1a 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(62,207,142,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(26,115,232,0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 60% 80%, rgba(62,207,142,0.1) 0%, transparent 50%);
+        }
+
+        /* Animated particles */
+        .hero-particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(62,207,142,0.3);
+            animation: float-particle linear infinite;
+        }
+
+        @keyframes float-particle {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 750px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(62,207,142,0.15);
+            border: 1px solid rgba(62,207,142,0.3);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.5); }
+        }
+
+        .hero h2 {
+            font-size: 52px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.25;
+            margin-bottom: 24px;
+        }
+
+        .hero h2 .highlight {
+            background: linear-gradient(135deg, var(--accent), #7dd3fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 50px;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero-stat h3 {
+            font-size: 40px;
+            font-weight: 700;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .hero-stat h3 span {
+            font-size: 20px;
+        }
+
+        .hero-stat p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            margin: 8px 0 0;
+        }
+
+        .hero-visual {
+            position: absolute;
+            right: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 600px;
+            height: 600px;
+            opacity: 0.15;
+        }
+
+        .hero-circle {
+            position: absolute;
+            border: 1px solid rgba(62,207,142,0.4);
+            border-radius: 50%;
+            animation: rotate-slow linear infinite;
+        }
+
+        .hero-circle:nth-child(1) {
+            width: 100%;
+            height: 100%;
+            animation-duration: 30s;
+        }
+
+        .hero-circle:nth-child(2) {
+            width: 75%;
+            height: 75%;
+            top: 12.5%;
+            left: 12.5%;
+            animation-duration: 25s;
+            animation-direction: reverse;
+        }
+
+        .hero-circle:nth-child(3) {
+            width: 50%;
+            height: 50%;
+            top: 25%;
+            left: 25%;
+            animation-duration: 20s;
+        }
+
+        @keyframes rotate-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* ==================== About Section ==================== */
+        .about {
+            background: var(--bg);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image-main {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-image-main .placeholder-img {
+            font-size: 120px;
+            opacity: 0.3;
+        }
+
+        .about-image-float {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background: #fff;
+            padding: 24px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .about-image-float .icon-circle {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .about-image-float h4 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .about-image-float p {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        .about-content h3 {
+            font-size: 16px;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .about-content h2 {
+            font-size: 34px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 20px;
+            line-height: 1.35;
+        }
+
+        .about-content > p {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 30px 0;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 16px;
+            background: var(--bg-light);
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .about-feature .check {
+            width: 22px;
+            height: 22px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        /* ==================== Services Section ==================== */
+        .services {
+            background: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: var(--radius);
+            padding: 40px 30px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(26,107,60,0.1), rgba(62,207,142,0.1));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            margin-bottom: 24px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            transform: scale(1.05);
+        }
+
+        .service-card:hover .service-icon span {
+            filter: brightness(10);
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .service-link:hover {
+            gap: 12px;
+            color: var(--accent);
+        }
+
+        /* ==================== Advantages Section ==================== */
+        .advantages {
+            background: var(--bg);
+            position: relative;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .advantage-card {
+            text-align: center;
+            padding: 40px 24px;
+            border-radius: var(--radius);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .advantage-card:hover {
+            background: #fff;
+            box-shadow: var(--shadow);
+        }
+
+        .advantage-number {
+            font-size: 48px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .advantage-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .advantage-card p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* ==================== Cases / Projects Section ==================== */
+        .cases {
+            background: var(--bg-light);
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .case-card {
+            border-radius: var(--radius);
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            transition: var(--transition);
+        }
+
+        .case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .case-image {
+            height: 220px;
+            background: linear-gradient(135deg, #e0f2e9, #b2dfdb);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .case-image .placeholder-icon {
+            font-size: 60px;
+            opacity: 0.2;
+        }
+
+        .case-tag {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--primary);
+            color: #fff;
+            padding: 5px 14px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .case-body {
+            padding: 24px;
+        }
+
+        .case-body h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+        }
+
+        .case-body p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .case-meta {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+            font-size: 13px;
+            color: var(--text-lighter);
+        }
+
+        /* ==================== Data Counter Section ==================== */
+        .counter-section {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .counter-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 50%, rgba(62,207,142,0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 50%, rgba(255,255,255,0.05) 0%, transparent 50%);
+        }
+
+        .counter-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .counter-item {
+            text-align: center;
+        }
+
+        .counter-item h3 {
+            font-size: 48px;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .counter-item h3 span {
+            font-size: 24px;
+            color: var(--accent);
+        }
+
+        .counter-item p {
+            font-size: 15px;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ==================== News Section ==================== */
+        .news {
+            background: var(--bg);
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .news-card {
+            display: flex;
+            gap: 20px;
+            padding: 24px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .news-card:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow);
+        }
+
+        .news-date {
+            text-align: center;
+            flex-shrink: 0;
+            width: 64px;
+        }
+
+        .news-date .day {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .news-date .month {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        .news-info h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-info p {
+            font-size: 14px;
+            color: var(--text-light);
+            line-height: 1.7;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .news-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            background: rgba(26,107,60,0.08);
+            color: var(--primary);
+            font-size: 12px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        /* ==================== Partners Section ==================== */
+        .partners {
+            background: var(--bg-light);
+            padding: 60px 0;
+        }
+
+        .partners-track {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .partner-logo {
+            width: 120px;
+            height: 50px;
+            background: #fff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: var(--text-lighter);
+            font-weight: 600;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .partner-logo:hover {
+            border-color: var(--accent);
+            box-shadow: var(--shadow);
+            color: var(--primary);
+        }
+
+        /* ==================== Contact Section ==================== */
+        .contact {
+            background: var(--bg);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info {
+            padding-right: 40px;
+        }
+
+        .contact-info h3 {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .contact-info > p {
+            font-size: 15px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .contact-item-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, rgba(26,107,60,0.1), rgba(62,207,142,0.1));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-item h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .contact-item p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .contact-form {
+            background: var(--bg-light);
+            padding: 40px;
+            border-radius: var(--radius);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            font-size: 14px;
+            font-family: inherit;
+            transition: var(--transition);
+            background: #fff;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(62,207,142,0.15);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: #fff;
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(26,107,60,0.3);
+        }
+
+        /* ==================== CTA Section ==================== */
+        .cta {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(62,207,142,0.2), transparent);
+            top: -200px;
+            right: -100px;
+            border-radius: 50%;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .cta p {
+            font-size: 17px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 35px;
+            position: relative;
+        }
+
+        .cta .btn {
+            position: relative;
+        }
+
+        /* ==================== Footer ==================== */
+        footer {
+            background: #0a1f14;
+            color: rgba(255,255,255,0.6);
+            padding-top: 80px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            padding-bottom: 50px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-about .logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-about .logo-text h1 {
+            color: #fff;
+            font-size: 18px;
+        }
+
+        .footer-about .logo-text span {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .footer-about p {
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+        }
+
+        .footer-social a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: rgba(255,255,255,0.6);
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .footer-col h4 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--accent);
+            margin-top: 10px;
+            border-radius: 1px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            padding: 24px 0;
+            text-align: center;
+            font-size: 13px;
+            color: rgba(255,255,255,0.3);
+        }
+
+        .footer-bottom a {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .footer-bottom a:hover {
+            color: var(--accent);
+        }
+
+        /* ==================== Back to Top ==================== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(26,107,60,0.3);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(26,107,60,0.4);
+        }
+
+        /* ==================== Animations ==================== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ==================== Responsive ==================== */
+        @media (max-width: 1024px) {
+            .services-grid,
+            .cases-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .advantages-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar { display: none; }
+
+            .menu-toggle { display: flex; }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: #fff;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 80px 24px 24px;
+                box-shadow: -5px 0 30px rgba(0,0,0,0.1);
+                transition: var(--transition);
+                gap: 0;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                color: var(--text) !important;
+                padding: 14px 16px !important;
+                border-radius: 8px !important;
+            }
+
+            .nav-links a:hover {
+                background: var(--bg-light) !important;
+                color: var(--primary) !important;
+            }
+
+            .nav-contact-btn {
+                margin-left: 0 !important;
+                margin-top: 10px;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .hero h2 { font-size: 34px; }
+            .hero p { font-size: 16px; }
+            .hero-stats { gap: 30px; flex-wrap: wrap; }
+            .hero-stat h3 { font-size: 30px; }
+
+            .about-grid,
+            .contact-grid,
+            .news-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .services-grid,
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .advantages-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .counter-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            .section { padding: 70px 0; }
+            .section-header h2 { font-size: 28px; }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image-float {
+                position: relative;
+                bottom: auto;
+                right: auto;
+                margin-top: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h2 { font-size: 28px; }
+            .hero-buttons { flex-direction: column; }
+            .hero-buttons .btn { justify-content: center; }
+            .advantages-grid { grid-template-columns: 1fr; }
+            .counter-grid { grid-template-columns: 1fr; }
+            .counter-item h3 { font-size: 36px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== Header ==================== -->
+    <header id="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-left">
+                    <span>📞 服务热线：0571-8888-8888</span>
+                    <span>📧 contact@renfeng-eco.com</span>
+                </div>
+                <div class="top-bar-right">
+                    <a href="#">企业邮箱</a>
+                    <span>|</span>
+                    <a href="#">OA系统</a>
+                    <span>|</span>
+                    <a href="#">English</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <nav class="nav-main">
+                <a href="#" class="logo">
+                    <div class="logo-icon">壬</div>
+                    <div class="logo-text">
+                        <h1>壬沣生态环保</h1>
+                        <span>RENFENG ECO-TECH</span>
+                    </div>
+                </a>
+                <div class="nav-links" id="navLinks">
+                    <a href="#home" class="active">首页</a>
+                    <a href="#about">关于我们</a>
+                    <a href="#services">业务领域</a>
+                    <a href="#cases">项目案例</a>
+                    <a href="#news">新闻资讯</a>
+                    <a href="#contact" class="nav-contact-btn">联系我们</a>
+                </div>
+                <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== Hero Section ==================== -->
+    <section class="hero" id="home">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-visual">
+            <div class="hero-circle"></div>
+            <div class="hero-circle"></div>
+            <div class="hero-circle"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    国家高新技术企业 · 生态环境保护先行者
+                </div>
+                <h2>以科技之力<br>守护<span class="highlight">绿水青山</span></h2>
+                <p>壬沣（杭州）生态环保科技公司致力于水环境治理、土壤修复、固废处理及智慧环保等领域，以自主核心技术为建设美丽中国提供全方位生态环境解决方案。</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-primary">
+                        探索我们的服务 →
+                    </a>
+                    <a href="#about" class="btn btn-outline">
+                        了解更多
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <h3>15<span>+</span></h3>
+                        <p>年行业深耕</p>
+                    </div>
+                    <div class="hero-stat">
+                        <h3>500<span>+</span></h3>
+                        <p>成功项目案例</p>
+                    </div>
+                    <div class="hero-stat">
+                        <h3>60<span>+</span></h3>
+                        <p>核心技术专利</p>
+                    </div>
+                    <div class="hero-stat">
+                        <h3>30<span>+</span></h3>
+                        <p>覆盖城市</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== About Section ==================== -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image fade-up">
+                    <div class="about-image-main">
+                        <div class="placeholder-img">🏢</div>
+                    </div>
+                    <div class="about-image-float">
+                        <div class="icon-circle">🏆</div>
+                        <div>
+                            <h4>15+ 年</h4>
+                            <p>生态环保领域深耕经验</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-content fade-up">
+                    <h3>ABOUT US</h3>
+                    <h2>扎根杭州，面向全国<br>做生态环境的守护者</h2>
+                    <p>壬沣（杭州）生态环保科技公司成立于杭州，是一家集技术研发、工程设计、装备制造、运营管理于一体的综合性生态环保企业。</p>
+                    <p>公司汇聚了一批来自浙江大学、同济大学等知名高校的环境工程专家团队，拥有多项自主知识产权的核心技术，致力于为政府和企业客户提供从环境咨询、方案设计到工程建设、运营管理的全链条生态环境服务。</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <span class="check">✓</span>
+                            国家高新技术企业
+                        </div>
+                        <div class="about-feature">
+                            <span class="check">✓</span>
+                            环境工程甲级资质
+                        </div>
+                        <div class="about-feature">
+                            <span class="check">✓</span>
+                            ISO14001认证
+                        </div>
+                        <div class="about-feature">
+                            <span class="check">✓</span>
+                             AAA级信用企业
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-primary" style="margin-top:10px;">了解更多 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Services Section ==================== -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-header fade-up">
+                <div class="en-title">Our Services</div>
+                <h2>核心业务领域</h2>
+                <p>覆盖生态环境治理全领域，以科技创新驱动绿色发展</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-up">
+                    <div class="service-icon"><span>💧</span></div>
+                    <h3>水环境治理</h3>
+                    <p>涵盖市政污水处理、工业废水零排放、黑臭水体治理、流域水环境综合整治等，采用自主研发的MBR膜处理及生态湿地技术。</p>
+                    <a href="#" class="service-link">了解详情 →</a>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon"><span>🌱</span></div>
+                    <h3>土壤修复</h3>
+                    <p>针对工业污染场地、农田土壤重金属污染、矿山生态破坏等问题，提供调查评估、方案设计、工程实施及效果评估全流程服务。</p>
+                    <a href="#" class="service-link">了解详情 →</a>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon"><span>♻️</span></div>
+                    <h3>固废处理处置</h3>
+                    <p>提供生活垃圾、工业固废、危险废物的无害化处理与资源化利用方案，打造循环经济产业链，推动"无废城市"建设。</p>
+                    <a href="#" class="service-link">了解详情 →</a>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon"><span>🌿</span></div>
+                    <h3>大气污染治理</h3>
+                    <p>针对工业废气、VOCs治理、扬尘控制等大气环境问题，提供高效净化设备和系统解决方案，助力打赢蓝天保卫战。</p>
+                    <a href="#" class="service-link">了解详情 →</a>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon"><span>🛰️</span></div>
+                    <h3>智慧环保</h3>
+                    <p>基于物联网、大数据、AI技术，构建环境监测预警平台、污染源在线监控系统、智慧水务管理平台等数字化解决方案。</p>
+                    <a href="#" class="service-link">了解详情 →</a>
+                </div>
+                <div class="service-card fade-up">
+                    <div class="service-icon"><span>📋</span></div>
+                    <h3>环境咨询</h3>
+                    <p>提供环境影响评价、环保竣工验收、排污许可申报、碳核查与碳资产管理、ESG报告编制等专业咨询服务。</p>
+                    <a href="#" class="service-link">了解详情 →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Advantages Section ==================== -->
+    <section class="section advantages">
+        <div class="container">
+            <div class="section-header fade-up">
+                <div class="en-title">Why Choose Us</div>
+                <h2>选择壬沣的理由</h2>
+                <p>以技术为核心竞争力，以品质赢得客户信赖</p>
+            </div>
+            <div class="advantages-grid">
+                <div class="advantage-card fade-up">
+                    <div class="advantage-number">01</div>
+                    <h3>自主核心技术</h3>
+                    <p>拥有60+项发明专利，多项技术达到国际先进水平，持续研发投入占比超过营收8%</p>
+                </div>
+                <div class="advantage-card fade-up">
+                    <div class="advantage-number">02</div>
+                    <h3>专家智库团队</h3>
+                    <p>汇聚院士顾问、教授级高工等高端人才，硕博占比超过40%，技术实力行业领先</p>
+                </div>
+                <div class="advantage-card fade-up">
+                    <div class="advantage-number">03</div>
+                    <h3>全流程服务</h3>
+                    <p>从环境诊断、方案设计、工程建设到长期运营管理，提供一站式全链条闭环服务</p>
+                </div>
+                <div class="advantage-card fade-up">
+                    <div class="advantage-number">04</div>
+                    <h3>品质保障体系</h3>
+                    <p>通过ISO三体系认证，严格执行工程质量标准，项目一次验收合格率达100%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Counter Section ==================== -->
+    <section class="counter-section">
+        <div class="container">
+            <div class="counter-grid">
+                <div class="counter-item fade-up">
+                    <h3><span class="count" data-target="500">0</span><span>+</span></h3>
+                    <p>成功项目案例</p>
+                </div>
+                <div class="counter-item fade-up">
+                    <h3><span class="count" data-target="60">0</span><span>+</span></h3>
+                    <p>核心技术专利</p>
+                </div>
+                <div class="counter-item fade-up">
+                    <h3><span class="count" data-target="200">0</span><span>+</span></h3>
+                    <p>专业服务团队</p>
+                </div>
+                <div class="counter-item fade-up">
+                    <h3><span class="count" data-target="30">0</span><span>+</span></h3>
+                    <p>覆盖城市</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Cases Section ==================== -->
+    <section class="section cases" id="cases">
+        <div class="container">
+            <div class="section-header fade-up">
+                <div class="en-title">Project Cases</div>
+                <h2>经典项目案例</h2>
+                <p>每一个项目都是对生态环境的庄严承诺</p>
+            </div>
+            <div class="cases-grid">
+                <div class="case-card fade-up">
+                    <div class="case-image">
+                        <div class="placeholder-icon">🏞️</div>
+                        <span class="case-tag">水环境治理</span>
+                    </div>
+                    <div class="case-body">
+                        <h3>杭州某流域水环境综合整治工程</h3>
+                        <p>对全长12.8公里的流域进行系统治理，包括截污纳管、生态修复、智慧监控等，水质从劣V类提升至III类。</p>
+                        <div class="case-meta">
+                            <span>📍 浙江杭州</span>
+                            <span>投资额：2.3亿元</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-card fade-up">
+                    <div class="case-image" style="background: linear-gradient(135deg, #e8eaf6, #c5cae9);">
+                        <div class="placeholder-icon">🏭</div>
+                        <span class="case-tag">土壤修复</span>
+                    </div>
+                    <div class="case-body">
+                        <h3>某化工遗留场地土壤修复项目</h3>
+                        <p>修复面积约85亩，采用原位热脱附+生物修复联合技术，修复后土地达到居住用地标准，实现安全再利用。</p>
+                        <div class="case-meta">
+                            <span>📍 江苏南京</span>
+                            <span>投资额：1.8亿元</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-card fade-up">
+                    <div class="case-image" style="background: linear-gradient(135deg, #fff3e0, #ffe0b2);">
+                        <div class="placeholder-icon">🏗️</div>
+                        <span class="case-tag">固废处理</span>
+                    </div>
+                    <div class="case-body">
+                        <h3>某市生活垃圾资源化利用项目</h3>
+                        <p>日处理能力1200吨，采用先进的分选+厌氧发酵+堆肥工艺，资源化利用率达85%以上，年减排CO₂约3万吨。</p>
+                        <div class="case-meta">
+                            <span>📍 安徽合肥</span>
+                            <span>投资额：3.5亿元</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:50px;" class="fade-up">
+                <a href="#" class="btn btn-outline-green">查看全部项目 →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== News Section ==================== -->
+    <section class="section news" id="news">
+        <div class="container">
+            <div class="section-header fade-up">
+                <div class="en-title">News & Insights</div>
+                <h2>新闻资讯</h2>
+                <p>了解行业前沿动态，掌握最新技术趋势</p>
+            </div>
+            <div class="news-grid">
+                <div class="news-card fade-up">
+                    <div class="news-date">
+                        <div class="day">15</div>
+                        <div class="month">2025.01</div>
+                    </div>
+                    <div class="news-info">
+                        <span class="news-tag">公司动态</span>
+                        <h3>壬沣环保与浙江大学签署产学研战略合作协议</h3>
+                        <p>双方将在水环境治理新材料、智慧环保大数据平台等领域开展深度合作，共建联合实验室。</p>
+                    </div>
+                </div>
+                <div class="news-card fade-up">
+                    <div class="news-date">
+                        <div class="day">08</div>
+                        <div class="month">2025.01</div>
+                    </div>
+                    <div class="news-info">
+                        <span class="news-tag">行业资讯</span>
+                        <h3>生态环境部发布《新污染物治理行动方案》最新解读</h3>
+                        <p>方案明确了新污染物治理的总体要求、主要任务和保障措施，为行业发展指明方向。</p>
+                    </div>
+                </div>
+                <div class="news-card fade-up">
+                    <div class="news-date">
+                        <div class="day">28</div>
+                        <div class="month">2024.12</div>
+                    </div>
+                    <div class="news-info">
+                        <span class="news-tag">项目动态</span>
+                        <h3>我司承建的某工业园区废水处理项目顺利通过竣工验收</h3>
+                        <p>项目出水水质全面达到《城镇污水处理厂污染物排放标准》一级A标准，获业主方高度评价。</p>
+                    </div>
+                </div>
+                <div class="news-card fade-up">
+                    <div class="news-date">
+                        <div class="day">20</div>
+                        <div class="month">2024.12</div>
+                    </div>
+                    <div class="news-info">
+                        <span class="news-tag">技术创新</span>
+                        <h3>我司自主研发的高效生物膜反应器技术获得国家发明专利授权</h3>
+                        <p>该技术突破了传统MBR膜污染难题，运行能耗降低30%，处理效率提升25%。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Partners Section ==================== -->
+    <section class="partners">
+        <div class="container">
+            <div class="section-header fade-up" style="margin-bottom:40px;">
+                <div class="en-title">Partners</div>
+                <h2>合作伙伴</h2>
+            </div>
+            <div class="partners-track fade-up">
+                <div class="partner-logo">浙江大学</div>
+                <div class="partner-logo">同济大学</div>
+                <div class="partner-logo">中国环科院</div>
+                <div class="partner-logo">北控水务</div>
+                <div class="partner-logo">光大环境</div>
+                <div class="partner-logo">中建集团</div>
+                <div class="partner-logo">华为技术</div>
+                <div class="partner-logo">阿里云</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA Section ==================== -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="fade-up">携手共建美丽中国</h2>
+            <p class="fade-up">无论您面临怎样的生态环境挑战，壬沣都将为您提供最专业的解决方案</p>
+            <a href="#contact" class="btn btn-outline fade-up" style="font-size:16px; padding:16px 40px;">
+                立即咨询 →
+            </a>
+        </div>
+    </section>
+
+    <!-- ==================== Contact Section ==================== -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info fade-up">
+                    <h3>联系我们</h3>
+                    <p>如果您有任何环境治理需求或合作意向，欢迎随时与我们联系，我们将在24小时内回复您。</p>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📍</div>
+                        <div>
+                            <h4>公司地址</h4>
+                            <p>浙江省杭州市西湖区文一西路998号<br>海创园大厦A座16层</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📞</div>
+                        <div>
+                            <h4>联系电话</h4>
+                            <p>总机：0571-8888-8888<br>商务咨询：0571-8888-9999</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">📧</div>
+                        <div>
+                            <h4>电子邮箱</h4>
+                            <p>商务合作：business@renfeng-eco.com<br>人才招聘：hr@renfeng-eco.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">🕐</div>
+                        <div>
+                            <h4>工作时间</h4>
+                            <p>周一至周五 08:30 - 17:30<br>周末及节假日值班热线畅通</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form fade-up">
+                    <h3 style="font-size:22px; font-weight:700; color:var(--dark); margin-bottom:24px;">在线留言</h3>
+                    <form id="contactForm" onsubmit="handleSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>您的姓名 *</label>
+                                <input type="text" placeholder="请输入您的姓名" required>
+                            </div>
+                            <div class="form-group">
+                                <label>联系电话 *</label>
+                                <input type="tel" placeholder="请输入您的电话" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>公司名称</label>
+                            <input type="text" placeholder="请输入您的公司名称">
+                        </div>
+                        <div class="form-group">
+                            <label>咨询业务</label>
+                            <select>
+                                <option value="">请选择咨询业务类型</option>
+                                <option>水环境治理</option>
+                                <option>土壤修复</option>
+                                <option>固废处理处置</option>
+                                <option>大气污染治理</option>
+                                <option>智慧环保</option>
+                                <option>环境咨询</option>
+                                <option>其他</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>留言内容 *</label>
+                            <textarea placeholder="请描述您的需求或问题..." required></textarea>
+                        </div>
+                        <button type="submit" class="form-submit">提交留言</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== Footer ==================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">壬</div>
+                        <div class="logo-text">
+                            <h1>壬沣生态环保</h1>
+                            <span>RENFENG ECO-TECH</span>
+                        </div>
+                    </a>
+                    <p>壬沣（杭州）生态环保科技公司 — 以科技守护绿水青山，以创新驱动绿色发展。我们致力于成为中国领先的生态环境综合服务商。</p>
+                    <div class="footer-social">
+                        <a href="#" title="微信">微</a>
+                        <a href="#" title="微博">博</a>
+                        <a href="#" title="抖音">抖</a>
+                        <a href="#" title="LinkedIn">in</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>业务领域</h4>
+                    <ul>
+                        <li><a href="#">水环境治理</a></li>
+                        <li><a href="#">土壤修复</a></li>
+                        <li><a href="#">固废处理处置</a></li>
+                        <li><a href="#">大气污染治理</a></li>
+                        <li><a href="#">智慧环保</a></li>
+                        <li><a href="#">环境咨询</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于壬沣</h4>
+                    <ul>
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">发展历程</a></li>
+                        <li><a href="#">企业文化</a></li>
+                        <li><a href="#">荣誉资质</a></li>
+                        <li><a href="#">社会责任</a></li>
+                        <li><a href="#">人才招聘</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>服务支持</h4>
+                    <ul>
+                        <li><a href="#">技术支持</a></li>
+                        <li><a href="#">下载中心</a></li>
+                        <li><a href="#">常见问题</a></li>
+                        <li><a href="#">在线投诉</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">法律声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 壬沣（杭州）生态环保科技公司 版权所有 | <a href="#">浙ICP备XXXXXXXX号-1</a> | <a href="#">浙公网安备 XXXXXXXXXXXXX号</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0})">↑</button>
+
+    <!-- ==================== JavaScript ==================== -->
+    <script>
+        // ===== Header Scroll Effect =====
+        const header = document.getElementById('header');
+        const backToTop = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 80) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // ===== Mobile Menu Toggle =====
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // ===== Hero Particles =====
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                const size = Math.random() * 6 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDuration = Math.random() * 15 + 10 + 's';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+
+        // ===== Scroll Animations =====
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // ===== Counter Animation =====
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counters = entry.target.querySelectorAll('.count');
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        const duration = 2000;
+                        const step = target / (duration / 16);
+                        let current = 0;
+
+                        const update = () => {
+                            current += step;
+                            if (current < target) {
+                                counter.textContent = Math.floor(current);
+                                requestAnimationFrame(update);
+                            } else {
+                                counter.textContent = target;
+                            }
+                        };
+                        update();
+                    });
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.counter-grid').forEach(el => counterObserver.observe(el));
+
+        // ===== Active Nav Link =====
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // ===== Form Submit =====
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('感谢您的留言！我们将在24小时内与您联系。');
+            e.target.reset();
+        }
+
+        // ===== Smooth scroll for anchor links =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
